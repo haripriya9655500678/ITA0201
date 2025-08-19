@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complete Your Order – Book Heaven</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function handleOrder(event) {
+      event.preventDefault(); // prevent form from reloading page
+      document.getElementById("order-form").style.display = "none";
+      document.getElementById("confirmation").style.display = "block";
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Complete Your Order</h1>
+    <nav>
+      <a href="index.html" target="_blank">Shop More</a>
+    </nav>
+  </header>
+
+  <section class="order">
+    <h2>Customer Details</h2>
+
+    <!-- Order Form -->
+    <form id="order-form" onsubmit="handleOrder(event)">
+      <label for="name">Full Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="phone">Phone Number:</label><br>
+      <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit number" required><br><br>
+
+      <label for="email">Email Address:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="address">Shipping Address:</label><br>
+      <textarea id="address" name="address" rows="4" required></textarea><br><br>
+
+      <label for="notes">Additional Notes (optional):</label><br>
+      <textarea id="notes" name="notes" rows="3"></textarea><br><br>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <!-- Thank You Message (Initially Hidden) -->
+    <div id="confirmation" style="display: none;">
+      <h3>Thank you for your order!</h3>
+      <p>Your details have been received. We will process your order and contact you shortly.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Book Heaven</p>
+  </footer>
+</body>
+</html>
